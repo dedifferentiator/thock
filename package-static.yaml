@@ -58,8 +58,8 @@ executables:
     cc-options:
       - -static
     ld-options:
-      - -static
       - -pthread
+      - -static
     dependencies:
     - thock
   server:
