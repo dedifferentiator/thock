@@ -69,6 +69,11 @@ jobs:
 
       - name: Build project
         run: |
+          if [[ "$OSTYPE" == "linux-gnu"* ]]; then \
+              echo $OSTYPE \
+              mv package-static.yaml package.yaml \
+              sudo apt-get -y update && sudo apt-get install libtinfo5
+          fi
           stack install --test
           mv ~/.local/bin/thock .
 
