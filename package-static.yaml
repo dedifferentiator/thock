@@ -51,9 +51,15 @@ executables:
     ghc-options:
     - -O3
     - -rtsopts
+    - -static
     - -threaded
     - -with-rtsopts=-N
     - -Wall
+    cc-options:
+      - -static
+    ld-options:
+      - -pthread
+      - -static
     dependencies:
     - thock
   server:

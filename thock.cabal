@@ -3,8 +3,6 @@ cabal-version: 1.12
 -- This file has been generated from package.yaml by hpack version 0.34.3.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: 829e4c79de99a64e808d6e8f4489c5473d0a3a4a50549eb8c54bee0cad5b3f43
 
 name:           thock
 version:        0.3.0.0
@@ -95,11 +93,7 @@ executable thock
   hs-source-dirs:
       app
   default-extensions: FlexibleContexts OverloadedStrings TypeApplications
-  ghc-options: -O3 -fno-PIE -rtsopts -static -threaded -with-rtsopts=-N -Wall
-  cc-options: -static
-  extra-lib-dirs:
-      lib
-  ld-options: -static -pthread
+  ghc-options: -O3 -rtsopts -threaded -with-rtsopts=-N -Wall
   build-depends:
       aeson >=1.5.5.1 && <1.6
     , base >=4.7 && <5

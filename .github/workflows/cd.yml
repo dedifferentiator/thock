@@ -67,7 +67,15 @@ jobs:
           enable-stack: true
           stack-version: 'latest'
 
-      - name: Build project
+      - name: Build project [LINUX]
+        if: matrix.os_name == 'linux'
+        run: |
+          mv package-static.yaml package.yaml
+          stack install --test
+          mv ~/.local/bin/thock .
+
+      - name: Build project [MACOS]
+        if: matrix.os_name == 'macos'
         run: |
           stack install --test
           mv ~/.local/bin/thock .
