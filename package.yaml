@@ -50,10 +50,17 @@ executables:
     source-dirs:         app
     ghc-options:
     - -O3
-    - -threaded
+    #- -optl-static
     - -rtsopts
+    - -static
+    - -threaded
     - -with-rtsopts=-N
     - -Wall
+    cc-options:
+      - -static
+    ld-options:
+      - -static
+      - -pthread
     dependencies:
     - thock
   server:
